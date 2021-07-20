@@ -49,15 +49,16 @@ class NavBar extends React.Component{
     return(
       <div>
         <div className={classes.NavList} id="NavBar">
-     
+     <div className ={classes.imageWrapper}><img src="https://static.wixstatic.com/media/ec9816_fac99786349f4b59aeaf8550dacdbc2d~mv2.gif" className={classes.img}/>
+      </div>
            
-              <img src="https://static.wixstatic.com/media/ec9816_fac99786349f4b59aeaf8550dacdbc2d~mv2.gif" className={classes.img}/>
+         <div className = {classes.linkWrapper}>     
           {this.state.listItems.map (item=>{
             return(
                      
               <a onClick={()=>this.showContentHandler(item.id)} key={item.id} href="#"className={ classNames( classes.content ,  item.active? 'active' : '' )}><b>{item.name}</b></a>)
           })}
-         
+         </div>
           <a className={classes.icon} onClick={()=>this.showSideDrawer("NavBar")} href="#"><MenuIcon/></a>
       </div>
         <div className={classes.contentDivClass}  dangerouslySetInnerHTML={{ __html: this.state.body }}>
